@@ -8,3 +8,9 @@ PyDynamic.egg-info/
 pytest.xml
 prep_test_DFT.py
 .hypothesis
+examples/Fourier_domain_deconv/AmplitudeData
+examples/Fourier_domain_deconv/HydrophonCalibrationData
+examples/Fourier_domain_deconv/MeasuredSignals/M-Mode 3 MHz
+examples/Fourier_domain_deconv/MeasuredSignals/M-Mode 6 MHz
+examples/Fourier_domain_deconv/MeasuredSignals/pD-Mode 3 MHz
+examples/Fourier_domain_deconv/MeasuredSignals/pD-Mode 7 MHz
