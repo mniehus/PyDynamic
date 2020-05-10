@@ -249,3 +249,18 @@ def findnearestmatch(liste,value):
     """
     return np.argmin(abs(liste-value))
 
+def print_status(infos, measurement_data = None, hyd_data = None):
+    # Summarise all information
+    if measurement_data is not None:
+        print("Measurement data")
+        dt = (measurement_data["time"][2] - measurement_data["time"][1])
+        print("Points time: {} dt: {} s fs: {} MHz".format(
+            len(measurement_data["time"]), dt * len(measurement_data["time"]), round(1 / dt) / 1E6))
+        df = (measurement_data["frequency"][2] - measurement_data["frequency"][1])
+        print("Points frequency: {} df: {} MHz fmax: {} MHz".format(
+            len(measurement_data["frequency"]), df / 1E6, max(measurement_data["frequency"]) / 1e6))
+    if hyd_data is not None:
+        print("Hydrophone calibration data")
+        print("Points: {} fmin: {} MHz fmax: {} MHz df {} Hz".format(
+            len(hyd_data["frequency"]), hyd_data["frequency"][1] / 1E6,
+            hyd_data["frequency"][-1] / 1E6, hyd_data["frequency"][2] - hyd_data["frequency"][1]))
